@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import MapContext from "../context/MapContext";
+import MapContext from "@/context/MapContext";
 import type { Map as OlMap } from "ol";
 
 const useMap = (): React.RefObject<OlMap | null> => {

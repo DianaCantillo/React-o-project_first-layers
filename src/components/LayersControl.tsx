@@ -1,24 +1,36 @@
 
-import { useLayerControls } from "../hooks/useLayerControls";
-const LayersControl = ({ layerName, layerDesc, opacity, visibility }: { layerName: string, layerDesc: string, opacity: number, visibility: boolean }) => {
+// import { useLayerControls } from "../hooks/useLayerControls";
+import { useLayerControls } from "@/hooks/useLayerControls";
+import { Input, Label } from "./ui";
+
+type LayersControlProps = {
+    layerName: string;
+    layerDesc: string;
+    opacity: number;
+    visibility: boolean;
+}
+
+const LayersControl = ({ layerName, layerDesc, opacity, visibility }
+    : LayersControlProps) => {
     const { layerOpacity, layerVisibility, toggleLayerVisibility, handleOpacityChange } = useLayerControls(layerName, opacity, visibility);
     return (
-        <div>
-
-            <strong>{layerDesc}</strong>
-            <input
+        <div className="flex items-center justify-between p-0 border-b border-gray-300">
+            <Label> <strong>{layerDesc}</strong>
+            </Label>
+            <Input
                 type="checkbox"
                 checked={layerVisibility}
                 onChange={toggleLayerVisibility}
             />
-            <input
+            <Input
                 type="range"
                 min="0"
                 max="1"
                 step="0.1"
                 value={layerOpacity}
                 onChange={handleOpacityChange}
-            /> Opacidad
+            />
+            <Label >{`${layerOpacity * 100} %`}</Label>
         </div>
     )
 }

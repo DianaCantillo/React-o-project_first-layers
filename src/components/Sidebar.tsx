@@ -1,22 +1,8 @@
 import LayersControl from './LayersControl';
-import OSM from 'ol/source/OSM';
-import { XYZ } from 'ol/source';
-
-type LayerType = 'Image' | 'Vector';
-
-interface LayerData {
-    name: string;
-    type?: LayerType;
-    source: OSM | XYZ;
-    desc: string;
-    opacity: number;
-    visible: boolean;
-}
+import type { LayerData } from '@/types';   
 
 const Sidebar = ({ layers }: { layers: LayerData[] }) => {
-
-    //add layers from firstLayers to the map on load
-
+    
     return (
         <div>
             {layers.map(layer => (
