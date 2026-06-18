@@ -46,5 +46,17 @@ export const firstLayers: LayersGroup =
             visible: true,
             zIndex: 0,
         },
+        //Agrego una capa de google earth como ejemplo
+        {
+            name: 'google-earth-layer',
+            type: 'Image',
+            source: new XYZ({
+                url: 'http://www.google.cn/maps/vt?lyrs=s@189&gl=cn&x={x}&y={y}&z={z}',
+            }),
+            desc: 'Google Earth',
+            opacity: 1,
+            visible: true,
+            zIndex: 0,
+        },
     ],
 }

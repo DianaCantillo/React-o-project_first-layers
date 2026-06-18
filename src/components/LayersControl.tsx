@@ -14,7 +14,7 @@ const LayersControl = ({ layerName, layerDesc, opacity, visibility }
     : LayersControlProps) => {
     const { layerOpacity, layerVisibility, toggleLayerVisibility, handleOpacityChange } = useLayerControls(layerName, opacity, visibility);
     return (
-        <div className="flex items-center justify-between p-0 border-b border-gray-300">
+        <div className="flex items-center justify-between p-0 border-b border-gray-100">
             <Label> <strong>{layerDesc}</strong>
             </Label>
             <Input

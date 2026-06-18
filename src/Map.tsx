@@ -1,7 +1,7 @@
 import { Map, Overlay } from 'react-openlayers';
 import 'react-openlayers/dist/index.css';
 import useMap from './hooks/useMap';
-import { firstLayers } from './data/first_layers';
+import { firstLayers } from './data/first_layers'; //Esta constante se importa del archivo first_layers.ts, en donde se definen las capas que se van a mostrar en el mapa.
 import Sidebar from './components/Sidebar';
 import LayerMap from './components/LayerMap';
 
