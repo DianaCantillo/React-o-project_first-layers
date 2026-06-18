@@ -147,7 +147,7 @@ export const firstLayers: LayerData[] = [
                 url: 'http://172.29.60.170:8080/geoserver/tropical_cyclone/wms',
                 params: {
                     'LAYERS': 'radii',
-                    'VIWEWPARAMS': 'type:f',
+                    'VIEWPARAMS': 'type:f',
                     'CQL_FILTER': "storm_id='al012026'"
                 },
             }),
@@ -172,19 +172,23 @@ export const firstLayers: LayerData[] = [
             name: 'puntos-ows-layer',
             type: 'Vector',
             source: new VectorSource({
-                    url: 'http://172.29.60.170:8080/geoserver/tropical_cyclone/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=tropical_cyclone:Puntos&outputFormat=application/json',
+                //url: 'http://172.29.60.170:8080/geoserver/tropical_cyclone/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=tropical_cyclone:Puntos&outputFormat=application/json',
+                //URL con filtro
+                url: "http://172.29.60.170:8080/geoserver/tropical_cyclone/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=tropical_cyclone:Puntos&outputFormat=application/json&CQL_FILTER=storm_id='al012026'",
                     format: new GeoJSON(),
             }),
             desc: 'Puntos OWS',
             opacity: 1,
             visible: true,
-            //zIndex: 2,
+            zIndex: 2,
         },
         {
             name: 'trayectoria-ows-layer',
             type: 'Vector',
             source: new VectorSource({
-                    url: 'http://172.29.60.170:8080/geoserver/tropical_cyclone/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=tropical_cyclone:trayectoria&outputFormat=application/json',
+                //url: 'http://172.29.60.170:8080/geoserver/tropical_cyclone/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=tropical_cyclone:Trayectoria&outputFormat=application/json',
+                //URL con filtro
+                url: "http://172.29.60.170:8080/geoserver/tropical_cyclone/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=tropical_cyclone:Trayectoria&outputFormat=application/json&CQL_FILTER=storm_id='al012026'",
                     format: new GeoJSON(),
             }),
             desc: 'Trayectoria OWS',
@@ -196,25 +200,27 @@ export const firstLayers: LayerData[] = [
             name: 'cono-ows-layer',
             type: 'Vector',
             source: new VectorSource({
-                    url: 'http://172.29.60.170:8080/geoserver/tropical_cyclone/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=tropical_cyclone:cono&outputFormat=application/json',
+                   // url: 'http://172.29.60.170:8080/geoserver/tropical_cyclone/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=tropical_cyclone:Cono&outputFormat=application/json',
+                   //URL con filtro
+               url: "http://172.29.60.170:8080/geoserver/tropical_cyclone/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=tropical_cyclone:Cono&outputFormat=application/json&CQL_FILTER=storm_id='al012026'",
                     format: new GeoJSON(),
             }),
             desc: 'Cono OWS',
             opacity: 1,
             visible: true,
-            zIndex: 2,
         },
         {
             name: 'radii-ows-layer',
             type: 'Vector',
             source: new VectorSource({
-                    url: 'http://172.29.60.170:8080/geoserver/tropical_cyclone/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=tropical_cyclone:radii&outputFormat=application/json',
+                    //url: 'http://172.29.60.170:8080/geoserver/tropical_cyclone/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=tropical_cyclone:radii&outputFormat=application/json',
+                    //URL con filtro
+                url: "http://172.29.60.170:8080/geoserver/tropical_cyclone/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=tropical_cyclone:radii&outputFormat=application/json&CQL_FILTER=storm_id='al012026'",
                     format: new GeoJSON(),
             }),
             desc: 'Radii OWS',
             opacity: 1,
             visible: true,
-            zIndex: 2,
         }
         
 
